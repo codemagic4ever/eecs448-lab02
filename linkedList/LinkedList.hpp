@@ -121,6 +121,24 @@ bool LinkedList<T>::removeBack()
 	/** TODO 
 		Fix this method
 	*/
+	 if(!isEmpty()) //followed the method remove front as a guide
+                //based on my understanding from the discussion with my TA our goal is to remove back
+                //which means that we have to traverse from start to get to the last node
+                //in order to do that we are required to change the remove front in order for us to have remove back
+        {
+
+                lastNode = m_front; //here instead of temp we are setting lastNode equal to m_front
+                while(lastNode -> getNext() != nullptr) //this is saying that the loop will run as long as the value is not equal to  null
+                {
+                        secondintoLast = lastNode; //if the while condition is met we set secondintoLast equal to lastNode.
+                        lastNode  = lastNode->getNext(); //then the lastNode is equal to the lastNode pointing to getNext() value.
+
+                }
+                delete lastNode; //here just like removeFront we will delete but instead of temp we are deleting lastNode
+                secondintoLast -> setNext(nullptr);
+                m_size--; //same steps as removeFront
+                isRemoved = true;
+        }
 
 	return(isRemoved);
 }	
