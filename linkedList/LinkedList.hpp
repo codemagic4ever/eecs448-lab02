@@ -45,7 +45,20 @@ bool LinkedList<T>::search(T value) const
 	/** TODO 
 		Fix this method
 	*/
+	while(temp != nullptr)
+        {
+        if(temp -> getValue() == value)  //checking if the temp pointing to getValue() is equal to value
+         //if it does then the we can continue to say that isFound = true
+        {
+                isFound = true;
+                //if the if condition is met then the bool isFound will be true         
+                //and we will return isFound. If the if condition is not met
+                //then it will be false
+                return(isFound);
 
+        }
+        temp = temp-> getNext(); //here setting temp equal to the value of temp pointing to getNext(). Getting the value by getNext()
+        }
 
 	return(isFound);
 }
